@@ -81,8 +81,6 @@ def assign_bus(inpt, bus):
 def assign_busses(inpt):
     for bus in sorted(copy.copy(inpt['parking']), key=sort_key):
         inpt = assign_bus(inpt, bus)
-
-    inpt['parking'] = []
     return inpt
 
 
