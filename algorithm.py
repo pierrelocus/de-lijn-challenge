@@ -46,6 +46,20 @@ inpt = {
     }
 }
 
+x = {'stelplaats': 'De Lijn Arsenaal',
+     'parking':
+         [{'bus': '1000', 'type': 'GROOT'},
+          {'bus': '1001', 'type': 'GROOT'}, {'bus': '1002', 'type': 'GROOT'},
+                 {'bus': '2000', 'type': 'NORMAAL'}, {'bus': '2001', 'type': 'NORMAAL'},
+                 {'bus': '2002', 'type': 'NORMAAL'}, {'bus': '2003', 'type': 'NORMAAL'},
+                 {'bus': '2004', 'type': 'NORMAAL'}, {'bus': '2005', 'type': 'NORMAAL'},
+                 {'bus': '3000', 'type': 'MINI'}, {'bus': '3001', 'type': 'MINI'}, {'bus': '3002', 'type': 'MINI'},
+                 {'bus': '3003', 'type': 'MINI'}, {'bus': '3004', 'type': 'MINI'}, {'bus': '3005', 'type': 'MINI'},
+                 {'bus': '3006', 'type': 'MINI'}, {'bus': '3007', 'type': 'MINI'}, {'bus': '3008', 'type': 'MINI'},
+                 {'bus': '3009', 'type': 'MINI'}, {'bus': '3010', 'type': 'MINI'}, {'bus': '3011', 'type': 'MINI'},
+                 {'bus': '3012', 'type': 'MINI'}],
+     'garage': {'groot': [], 'medium': [], 'klein': []}}
+
 
 def sort_key(x):
     return {'GROOT': 0, 'NORMAAL': 1, 'MINI': 2}[x['type']], x['bus']
@@ -81,6 +95,8 @@ def assign_bus(inpt, bus):
 def assign_busses(inpt):
     for bus in sorted(copy.copy(inpt['parking']), key=sort_key):
         inpt = assign_bus(inpt, bus)
+
+    inpt['parking'] = []
     return inpt
 
 

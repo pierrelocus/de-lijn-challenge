@@ -13,7 +13,9 @@ app = Flask(__name__)
 """
 def check_best_bus_placement(input_):
     print(input_)
-    return algorithm.assign_busses(input_)
+    result = algorithm.assign_busses(input_)
+    print(result)
+    return result
 
 
 @app.route('/parking', methods=['POST'])
@@ -23,7 +25,7 @@ def parking():
         json_stringed = files['jsoninput'].read()
         jsoned = json.loads(json_stringed.decode('utf-8'))
         result = check_best_bus_placement(jsoned)
-        print('RESULT : ', result)
+        print(result)
         return jsonify({'status': 'success', 'message': result})
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
