@@ -17,12 +17,13 @@ def check_best_bus_placement(input_):
 def parking():
     try:
         files = request.files
-        json_stringed = files['inputdata'].read()
+        json_stringed = files['jsoninput'].read()
         jsoned = json.loads(json_stringed.decode('utf-8'))
         result = check_best_bus_placement(jsoned)
+        print('RESULT : ', result)
         return jsonify({'status': 'success', 'message': result})
     except Exception as e:
-        return jsonify({'status': 'error', 'message': e})
+        return jsonify({'status': 'error', 'message': str(e)})
 
 
 @app.route('/')
