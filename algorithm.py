@@ -82,7 +82,9 @@ def assign_busses(inpt):
     for bus in sorted(copy.copy(inpt['parking']), key=sort_key):
         inpt = assign_bus(inpt, bus)
 
+    inpt['parking'] = []
     return inpt
 
 
-pprint.pprint(assign_busses(inpt)['garage'])
+if __name__ == '__main__':
+    pprint.pprint(assign_busses(inpt)['garage'])
