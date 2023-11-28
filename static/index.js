@@ -10,7 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
             contentType: false,
             processData: false,
             success: function (data) {
-                console.log(data);
+                console.log(data.message.garage);
+                for (const bigbus of data.message.garage.groot) {
+                    console.log(bigbus);
+                }
             },
         });
     });

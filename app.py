@@ -14,7 +14,6 @@ app = Flask(__name__)
 def check_best_bus_placement(input_):
     print(input_)
     result = algorithm.assign_busses(input_)
-    print(result)
     return result
 
 

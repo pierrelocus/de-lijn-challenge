@@ -1,0 +1,25 @@
+#parkingform{
+    width: 100%;
+    height: 40px;
+    background: rgba(20, 20 ,20, 0.2)
+}
+
+.bigbus{
+    width: 100%;
+    height: calc(80vh - 40px);
+    border: 2px orange solid;
+}
+.medbus{
+    width: 100%;
+    height: calc(40vh - 40px);
+    border: 2px orange solid;
+}
+.minibus{
+    width: 100%;
+    height: calc(20vh - 40px);
+    border: 2px orange solid;
+}
+.minibusempty{
+    width: 100%;
+    height: calc(20vh - 40px);
+}
